@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  neo4j:
+    image: neo4j:4.4.11-community
+    ports:
+      - 7474:7474
+      - 7687:7687
+    container_name: try_neo4j
+    environment:
+      - NEO4J_AUTH=neo4j/try
+    volumes:
+      - ./data:/data
+      - ./import:/var/lib/neo4j/import
+      - ./logs:/logs
+      - ./plugins:/plugins
